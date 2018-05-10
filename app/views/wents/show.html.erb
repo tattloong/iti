@@ -1,0 +1,19 @@
+<h2>Country: <%= @went.country %> <br /></h2>
+<h2>Destination: <%= @went.destination %> <br /></h2>
+<p> Duration: <%= @went.duration %> <br />
+		Activity: <%= @went.activity %> <br />
+		Address: <%= @went.address %> <br />
+		Price: <%= @went.price %> <br />			
+		Description: <%= @went.description %>
+
+<% if current_user && @went.user == current_user %>
+ | <%= link_to 'Edit', edit_went_path(@went) %> | <%= link_to 'Delete', @went, method: :delete %> |
+ <% end %>
+ <br />
+
+ <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@went.latitude}%2C#{@went.longitude}" %>
+
+
+
+	<!--?key=AIzaSyAW6_L2GZxS1r8lZTKpsxo0fiN0_ynwilU&callback=initMap">
+  </script> -->

@@ -1,0 +1,22 @@
+<% if current_user %>
+<%= link_to 'Add Went', new_went_path %>
+<% end %>	
+<br />
+<tbody>
+	<% @wents.each do |went| %>
+	<tr id='<%= went.id %>'>
+	<td>Country: <%= went.country %></td> <br /></h2>
+	<td>Destination: <%= went.destination %></td> <br /></h2>
+	<td> Duration: <%= went.duration %></td> <br />
+	<td> Activity: <%= went.activity %></td> <br />
+	<td> Address: <%= went.address %></td> <br />
+	<td> Price: <%= went.price %></td> <br />
+	<td> Description: <%= went.description %></td>
+	<td> <%= link_to 'Show', went %></td>
+	<% if current_user && went.user == current_user%>
+	<td>|<%= link_to 'Edit', edit_went_path(went) %></td> |
+	<td> <%= link_to 'Delete', @went, method: :delete %> </td> |
+	</tr>
+	<% end %>
+</tbody> <br /> <br />
+<% end %>

@@ -1,0 +1,29 @@
+<div>
+	<%= form_for @went do |f| %>
+
+		<%= f.label :country %> <br />
+		<%= f.text_field :country %> <br />
+
+		<%= f.label :destination %> <br />
+		<%= f.text_field :destination %> <br />
+
+		<%= f.label :duration %> <br />
+		<%= f.text_field :duration %> <br /><br />
+
+		<%= f.label :activity %> <br />
+		<%= f.text_field :activity %><br />
+
+		<%= f.label :address %> <br />
+		<%= f.text_field :address %><br />
+
+		<%= f.label :price %>
+		<div> <%= f.number_field :price, :class => 'text_field' %> </div> <br />
+
+		<%= f.label :description %>
+		<%= f.text_area :description %> <br /><br />
+
+
+		<span id="add"> <%= f.button "Add Activities" %> </span>
+		<%= f.submit "Create Went"%>
+	<% end %>
+</div>
